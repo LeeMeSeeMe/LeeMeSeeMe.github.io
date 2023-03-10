@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Makassar Dalam Angka 2022</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Highchart.js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+    <!-- GeoJson Link -->
+    <script src="GeoJson/Kota_Makassar.js"></script>
+    <!-- Map Style -->
+    <style>
+        #map { 
+            height: 500px;
+        }
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+        .legend {
+            line-height: 18px;
+            color: #555;
+        }
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                </div>
+                <div class="sidebar-brand-text mx-3">Sosial Ekonomi Makassar <br>2021 dan 2022</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Umum
+            </div>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="daerah_administratif.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Daerah Administratif</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="keadaan_geografi.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Keadaan Geografi</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="keadaan_iklim.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Keadaan Iklim</span></a>
+            </li>
+            
+
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Sosial Ekonomi
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="sumber_daya_manusia.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Sumber Daya Manusia</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="penduduk.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Penduduk</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="pendidikan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Pendidikan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kesehatan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Kesehatan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="agama.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Agama</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kemiskinan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Kemiskinan dan Pembangunan Manusia</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ketenagakerjaan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Ketenagakerjaan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="perdagangan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Perdagangan</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <div class="mb-4"></div>
+                <!-- End of Topbar -->
+
+                <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <div class="mb-4"></div>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Daerah Administratif</h1>
+                    </div>
+                    <!-- Content Row -->
+
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="card shadow mb-4">
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <!-- Map -->
+                                    <div id="map"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- Visualisasi Script -->
+    <script>
+        
+        var map = L.map('map').setView([-5.12,119.45], 11);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        L.geoJson(kecamatanmakassar).addTo(map);
+
+        function style(features) {
+            return {
+                fillColor: "#2596be",
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+        }
+
+        L.geoJson(kecamatanmakassar, {style: style}).addTo(map);
+
+        function highlightFeature(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 3,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+
+            layer.bringToFront();
+            info.update(layer.feature.properties);
+        }
+
+        function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+            info.update();
+        }
+
+        var geojson;
+        // ... our listeners
+        geojson = L.geoJson(kecamatanmakassar);
+
+        function zoomToFeature(e) {
+            map.fitBounds(e.target.getBounds());
+        }
+
+        function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight,
+                click: zoomToFeature
+            });
+        }
+
+        geojson = L.geoJson(kecamatanmakassar, {
+            style: style,
+            onEachFeature: onEachFeature
+        }).addTo(map);
+
+        var info = L.control();
+
+        info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+            this.update();
+            return this._div;
+        };
+
+        // method that we will use to update the control based on feature properties passed
+        info.update = function (props) {
+            this._div.innerHTML = '<h4>Jumlah Daerah Administratif<br>Setiap Kecamatan Kota Makassar</h4>' +  (props ?
+                '<b>' + props.KECAMATAN + '</b><br />' 
+                + ' Jumlah Kelurahan: ' + props.KELURAHAN + '</b><br />'
+                + ' Jumlah RW: ' + props.RW + '</b><br />'
+                + ' Jumlah RT: ' + props.RT
+                : 'Hover over a state');
+        };
+
+        info.addTo(map)
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Makassar Dalam Angka 2022</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Highchart.js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+    <!-- GeoJson Link -->
+    <script src="GeoJson/Kota_Makassar.js"></script>
+    <!-- Map Style -->
+    <style>
+        #map { 
+            height: 500px;
+        }
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+        .legend {
+            line-height: 18px;
+            color: #555;
+        }
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                </div>
+                <div class="sidebar-brand-text mx-3">Sosial Ekonomi Makassar <br>2021 dan 2022</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Umum
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="daerah_administratif.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Daerah Administratif</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="keadaan_geografi.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Keadaan Geografi</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="keadaan_iklim.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Keadaan Iklim</span></a>
+            </li>
+            
+
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Sosial Ekonomi
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="sumber_daya_manusia.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Sumber Daya Manusia</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="penduduk.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Penduduk</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="pendidikan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Pendidikan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kesehatan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Kesehatan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="agama.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Agama</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kemiskinan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Kemiskinan dan Pembangunan Manusia</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ketenagakerjaan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Ketenagakerjaan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="perdagangan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Perdagangan</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <div class="mb-4"></div>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Keadaan Iklim</h1>
+                    </div>
+                    <!-- Content Row -->
+
+                    <div class="row">
+                        <!-- Curah hujan -->
+                        <div class="col-xl-6 col-lg-12">
+                            <figure class="highcharts-figure">
+                                <div id="curah_hujan"></div>
+                            </figure>
+                        </div>
+                        <!-- Jumlah hari -->
+                        <div class="col-xl-6 col-lg-12">
+                            <figure class="highcharts-figure">
+                                <div id="jumlah_hari"></div>
+                            </figure>
+                        </div>
+                        <!-- Suhu -->
+                        <div class="col-xl-6 col-lg-12">
+                            <figure class="highcharts-figure">
+                                <div id="suhu"></div>
+                            </figure>
+                        </div>
+                        <!-- Kelembaban -->
+                        <div class="col-xl-6 col-lg-12">
+                            <figure class="highcharts-figure">
+                                <div id="kelembaban"></div>
+                            </figure>
+                        </div>
+                        <!-- Kecepatan angin -->
+                        <div class="col-xl-6 col-lg-12">
+                            <figure class="highcharts-figure">
+                                <div id="kecepatan_angin"></div>
+                            </figure>
+                        </div>
+                        <!-- Tekanan udara -->
+                        <div class="col-xl-6 col-lg-12">
+                            <figure class="highcharts-figure">
+                                <div id="tekanan_udara"></div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+                <br><br><br>
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- Visualisasi Script -->
+    <script>
+
+        Highcharts.chart('curah_hujan', {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Jumlah Curah Hujan Tahun 2021'
+        },
+        xAxis: {
+            categories: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'Mei',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Okt',
+                'Nov',
+                'Des'
+            ],
+            accessibility: {
+                description: 'Months of the year'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Curah Hujan'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value + 'mm';
+                }
+            }
+        },
+        tooltip: {
+            crosshairs: true,
+            shared: true
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    radius: 4,
+                    lineColor: '#666666',
+                    lineWidth: 1
+                }
+            }
+        },
+        series: [{
+            name: ' ',
+            marker: {
+                symbol: 'square'
+            },
+            data: [1195.0, 434.3, 679.90, 430.4, 65.0, 75.4, 43.0, 64.0, 114.6, 107.7, 327.7, 964.0]
+
+        }]
+    });
+
+    // =========================================================================================================
+    Highcharts.chart('kecepatan_angin', {
+
+    title: {
+        text: 'Kecepatan Angin Tahun 2021'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Kecepatan Angin (m/det)'
+        }
+    },
+
+    xAxis: {
+        categories: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'Mei',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Okt',
+                'Nov',
+                'Des'
+            ]
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            }
+        }
+    },
+
+    series: [{
+        name: 'Rata-rata',
+        data: [4.43, 3.87, 3.66, 3.87, 3.18, 3.30, 3.15, 3.65, 3.31,
+                3.48, 3.69, 4.20]
+    }, {
+        name: 'Maksimum',
+        data: [15.00, 25.00, 16.00, 28.00, 10.00, 10.00, 12.00, 11.00, 11.00,
+                12.00, 17.00, 21.00]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+    });
+
+    // =========================================================================================================
+    Highcharts.chart('tekanan_udara', {
+
+    title: {
+        text: 'Tekanan Udara Tahun 2021'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Tekanan Udara (mbar)'
+        }
+    },
+
+    xAxis: {
+        categories: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'Mei',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Okt',
+                'Nov',
+                'Des'
+            ],
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            }
+        }
+    },
+
+    series: [{
+        name: 'Minimum',
+        data: [1004.00, 1005.00, 1003.70, 1004.50, 1004.50, 1005.40, 1005.30, 1005.50, 1005.10,
+                1003.90, 1003.80, 1005.10]
+    }, {
+        name: 'Rata-rata',
+        data: [1007.97, 1008.92, 1008.92, 1009.54, 1008.56, 1009.96, 1009.51, 1009.82, 1009.27,
+                1008.86, 1008.04, 1009.27]
+    }, {
+        name: 'Maksimum',
+        data: [1011.20, 1012.40, 1013.30, 1012.80, 1012.60, 1013.00, 1013.10, 1014.00, 1012.70,
+                1014.10, 1011.90, 1015.10]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+    });
+
+    // =========================================================================================================
+    Highcharts.chart('kelembaban', {
+
+    title: {
+        text: 'Kelembaban Tahun 2021'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Kecepatan Angin %'
+        }
+    },
+
+    xAxis: {
+        categories: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'Mei',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Okt',
+                'Nov',
+                'Des'
+            ],
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            }
+        }
+    },
+
+    series: [{
+        name: 'Minimum',
+        data: [67.00, 64.00, 62.00, 62.00, 56.00, 56.00, 54.00, 49.00, 54.00,
+                57.00, 45.00, 64.00]
+    }, {
+        name: 'Rata-rata',
+        data: [87.24, 84.94, 85.59, 82.86, 78.16, 79.10, 81.23, 74.97, 76.35,
+                79.84, 82.64, 84.80]
+    }, {
+        name: 'Maksimum',
+        data: [98.00, 99.00, 98.00, 98.00, 96.00, 98.00, 99.00, 95.00, 98.00,
+                95.00, 97.00, 98.00]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+    });
+
+    // =========================================================================================================
+    Highcharts.chart('suhu', {
+
+        title: {
+            text: 'Suhu Tahun 2021'
+        },
+
+        yAxis: {
+            title: {
+                text: 'Suhu (°C)'
+            }
+        },
+
+        xAxis: {
+            categories: [
+                    'Jan',
+                    'Feb',
+                    'Mar',
+                    'Apr',
+                    'Mei',
+                    'Jun',
+                    'Jul',
+                    'Aug',
+                    'Sep',
+                    'Okt',
+                    'Nov',
+                    'Des'
+                ],
+        },
+
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                }
+            }
+        },
+
+        series: [{
+            name: 'Minimum',
+            data: [21.80, 23.80, 23.00, 23.80, 23.00, 23.90, 22.40, 23.80, 23.80,
+                    24.00, 24.00, 23.20]
+        }, {
+            name: 'Rata-rata',
+            data: [26.97, 27.63, 27.63, 28.27, 28.85, 28.47, 28.13, 28.62, 28.75,
+                    28.69, 27.95, 27.42]
+        }, {
+            name: 'Maksimum',
+            data: [32.40, 33.20, 33.00, 33.80, 34.00, 33.90, 34.00, 34.40,  34.20,
+                    34.20, 34.10, 33.00]
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+        });
+
+        // =========================================================================================================
+        Highcharts.chart('jumlah_hari', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Jumlah Hari Hujan Tahun 2021'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Hari'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{point.y} Hari'
+        },
+        series: [{
+            name: 'Population',
+            data: [
+                ['Jan', 30],
+                ['Feb', 18],
+                ['Mar', 25],
+                ['Apr', 10],
+                ['Mei', 7],
+                ['Jun', 12],
+                ['Jul', 10],
+                ['Aug', 8],
+                ['Sep', 9],
+                ['Okt', 17],
+                ['Nov', 22],
+                ['Des', 24]
+            ]
+        }]
+    });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Makassar Dalam Angka 2022</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Highchart.js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+    <!-- GeoJson Link -->
+    <script src="GeoJson/Kota_Makassar.js"></script>
+    <!-- Map Style -->
+    <style>
+        #map { 
+            height: 500px;
+        }
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+        .legend {
+            line-height: 18px;
+            color: #555;
+        }
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                </div>
+                <div class="sidebar-brand-text mx-3">Sosial Ekonomi Makassar <br>2021 dan 2022</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Umum
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="daerah_administratif.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Daerah Administratif</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="keadaan_geografi.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Keadaan Geografi</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="keadaan_iklim.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Keadaan Iklim</span></a>
+            </li>
+            
+
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Sosial Ekonomi
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="sumber_daya_manusia.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Sumber Daya Manusia</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="penduduk.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Penduduk</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="pendidikan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Pendidikan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kesehatan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Kesehatan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="agama.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Agama</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kemiskinan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Kemiskinan dan Pembangunan Manusia</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="ketenagakerjaan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Ketenagakerjaan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="perdagangan.html">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span>Perdagangan</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <div class="mb-4"></div>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800"> Ketenagakerjaan</h1>
+                    </div>
+                    <!-- Content Row -->
+
+                    <div class="row">
+                        <!-- Jumlah angkatan kerja/bukan angkatan kerja dan jenis kelamin -->
+                        <div class="col-xl-12 col-lg-6">
+                            <figure class="highcharts-figure">
+                                <div id="angkatan_kerja1"></div>
+                            </figure>
+                        </div>
+                        <!-- Pendidikan anggota -->
+                        <div class="col-xl-5 col-lg-6">
+                            <figure class="highcharts-figure">
+                                <div id="angkatan_kerja2"></div>
+                            </figure>
+                        </div>
+                        <!-- Jumlah angkatan kerja/bukan angkatan kerja dan jenis kelamin -->
+                        <div class="col-xl-7 col-lg-6">
+                            <figure class="highcharts-figure">
+                                <div id="angkatan_kerja3"></div>
+                            </figure>
+                        </div>
+                        <!-- Pendidikan anggota -->
+                        <div class="col-xl-8 col-lg-6">
+                            <figure class="highcharts-figure">
+                                <div id="angkatan_kerja4"></div>
+                            </figure>
+                        </div>
+                        <!-- Jumlah angkatan kerja/bukan angkatan kerja dan jenis kelamin -->
+                        <div class="col-xl-4 col-lg-6">
+                            <figure class="highcharts-figure">
+                                <div id="angkatan_kerja5"></div>
+                            </figure>
+                        </div>
+                        <!-- Pendidikan anggota -->
+                        <div class="col-xl-6 col-lg-6">
+                            <figure class="highcharts-figure">
+                                <div id="angkatan_kerja6"></div>
+                            </figure>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <figure class="highcharts-figure">
+                                <div id="angkatan_kerja7"></div>
+                            </figure>
+                        </div>
+                    </div>                   
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->    
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- Visualisasi Script -->
+    <script>
+Highcharts.chart('angkatan_kerja1', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Jumlah Penduduk Berumur 15 Tahun Keatas Menurut Jenis Kegiatan Selama Seminggu dan Jenis Kelamin di Kota Makassar'
+        },
+        xAxis: {
+            categories: [
+                'Bekerja',
+                'Pengangguran Terbuka',
+                'Sekolah',
+                'Mengurus Rumah Tangga',
+                'Lainnya'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Laki-laki',
+            data: [387740, 59123, 51050, 43560, 56529]
+
+        }, {
+            name: 'Perempuan',
+            data: [242193, 36473, 78621, 223830, 35081]
+
+        }]
+    });
+
+    // ================================================================================================
+    
+    Highcharts.chart('angkatan_kerja2', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Jumlah Penduduk Angkatan kerja dan Bukan Angkatan Kerja Di Kota Makassar'
+        },
+        tooltip: {
+            pointFormat: '{series.name} <b>{point.y}</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    connectorColor: 'silver'
+                }
+            }
+        },
+        series: [{
+            name: 'Jumlah',
+            data: [
+                { name: 'Angkatan Kerja', y: 725529 },
+                { name: 'Bukan Angkatan Kerja', y: 489671 }
+            ]
+        }]
+    });
+
+    // ================================================================================================
+
+    Highcharts.chart('angkatan_kerja3', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Jumlah Angkatan Kerja Menurut Pendidikan Tertinggi dan Jenis Kegiatan di Kota Makassar'
+        },
+        xAxis: {
+            categories: [
+                'SD',
+                'SMP',
+                'SMA',
+                'Perguruan Tinggi'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Bekerja',
+            data: [119967, 81556, 245167, 183243]
+
+        }, {
+            name: 'Pengangguran',
+            data: [10921, 11018, 47020, 26637]
+
+        }]
+    });
+
+    // ================================================================================================
+
+    Highcharts.chart('angkatan_kerja4', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Penduduk Umur 15 Tahun Ke Atas yang Bekerja Menurut Status Pekerja Utama dan Jenis Kelamin di Kota Makassar'
+            },
+        xAxis: {
+            categories: [
+                    'Berusaha Sendiri',
+                    'Berusaha Dibantu Buruh Tidak Tetap',
+                    'Berusaha Dibantu Buruh Tetap',
+                    'Buruh',
+                    'Pekerja Bebas',
+                    'Pekerja Keluarga/Tidak Dibayar'
+                ],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Laki-laki',
+            data: [82973, 15664, 15870, 235981, 22348, 14904]
+        }, {
+            name: 'Perempuan',
+            data: [54808, 20135, 3536, 126607, 2244, 34863]
+        }]
+    });
+
+    // ================================================================================================
+
+    Highcharts.chart('angkatan_kerja5', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Penduduk Bekerja Berumur 15 Tahun Ke Atas Menurut Lapangan Pekerjaan Utama dan Jenis Kelamin di Kota Makassar'
+        },
+        xAxis: {
+            categories: [
+                'Pertanian',
+                'Manufaktur',
+                'Jasa'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Laki-laki',
+            data: [17682, 100219, 269839]
+
+        }, {
+            name: 'Perempuan',
+            data: [1013, 33294, 207886]
+
+        }]
+    });
+
+    // ================================================================================================
+
+    Highcharts.chart('angkatan_kerja6', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Penduduk Bekerja Berumur 15 Tahun Ke Atas Menurut Golongan Umur dan Jenis Kelamin di Kota Makassar'
+        },
+        xAxis: {
+            categories: [
+                '15-19',
+                '20-24',
+                '25-29',
+                '30-34',
+                '35-39',
+                '40-44',
+                '45-49',
+                '50-54',
+                '55-59',
+                '60+'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Laki-laki',
+            data: [12485, 35778, 48839, 53170, 51871, 53155, 48489, 36675, 21119, 26159]
+
+        }, {
+            name: 'Perempuan',
+            data: [7879, 33623, 33574, 30070, 28480, 33386, 27260, 21712, 16512, 9697]
+
+        }]
+    });
+
+    // ================================================================================================
+
+    Highcharts.chart('angkatan_kerja7', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Penduduk Bekerja Berumur 15 Tahun Ke Atas Menurut Jumlah Jam Kerja dan Jenis Kelamin'
+        },
+        xAxis: {
+            categories: [
+                '0 (tidak Bekerja)',
+                '1-14',
+                '15-34',
+                '35+'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Laki-laki',
+            data: [10747, 12787, 42777, 321429]
+
+        }, {
+            name: 'Perempuan',
+            data: [9653, 21184, 39433, 171923]
+
+        }]
+    });
+
+    </script>
+
+</body>
+
+</html>
